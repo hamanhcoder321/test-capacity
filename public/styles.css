@@ -1,9 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #e8f0fe; 
+    margin: 0;
+    padding: 0;
+}
+
 .form-container {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: #f8f8f8;
-    text-align: center;  
+    width: 420px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.form-container h2 {
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #b5c7ff;
+    background: #f3f6ff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #1a73e8;
+    background: #ffffff;
+    box-shadow: 0 0 6px rgba(26, 115, 232, 0.3);
+    outline: none;
+}
+
+.form-container .submit-1 {
+    width: 96% !important;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: #1a73e8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+}
+
+button:hover {
+    background: #0b57d0;
+}
+
+div.error {
+    color: red;
+    margin-bottom: 10px;
+}
+
+.result-container {
+    width: 420px;
+    margin: 60px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    text-align: left;
+}
+
+.result-container a {
+    text-decoration: none;
+}
+
+
+h2 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+strong {
+    color: #0b57d0;
+}
+
+button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background: #1a73e8;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+button:hover {
+    background: #0b57d0;
 }
