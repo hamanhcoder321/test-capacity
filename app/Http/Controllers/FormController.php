@@ -14,28 +14,30 @@ class FormController extends Controller
     public function submitForm(Request $request)
     {
         // Validate
-        $request->validate([
-            'name'  => 'required',
-            'email' => 'required|email',
-            'age'   => 'required|numeric|min:18|max:60',
-        ] ,
-        [
-            'name.required'  => 'Họ và tên không được để trống.',
-            'email.required' => 'Email không được để trống.',
-            'email.email'    => 'Email không đúng định dạng.',
-            'age.required'   => 'Tuổi không được để trống.',
-            'age.numeric'    => 'Tuổi phải là một số.',
-            'age.min'        => 'Tuổi phải lớn hơn hoặc bằng 18.',
-            'age.max'        => 'Tuổi phải nhỏ hơn 61.',
-        ]
-    );
+        $request->validate(
+            [
+                'name' => 'required',
+                'email' => 'required|email',
+                'age' => 'required|numeric|min:18|max:60',
+            ],
+            [
+                'name.required' => 'Họ và tên không được để trống.',
+                'email.required' => 'Email không được để trống.',
+                'email.email' => 'Email không đúng định dạng.',
+                'age.required' => 'Tuổi không được để trống.',
+                'age.numeric' => 'Tuổi phải là một số.',
+                'age.min' => 'Tuổi phải lớn hơn hoặc bằng 18.',
+                'age.max' => 'Tuổi phải nhỏ hơn 61.',
+            ]
+        );
 
-        session([
-            'name'  => $request->name,
-            'email' => $request->email,
-            'age'   => $request->age,
-        ]
-    );
+        session(
+            [
+                'name' => $request->name,
+                'email' => $request->email,
+                'age' => $request->age,
+            ]
+        );
 
         return redirect()->route('form.result');
     }
@@ -43,15 +45,15 @@ class FormController extends Controller
     public function showResult()
     {
         $data = [
-            'name'  => session('name'),
+            'name' => session('name'),
             'email' => session('email'),
-            'age'   => session('age'),
+            'age' => session('age'),
         ];
 
         return view('result', compact('data'));
     }
 
-    
+
     public function resetForm()
     {
         session()->forget(['name', 'email', 'age']);
